@@ -20,7 +20,8 @@ jobs:
     steps:
       - name: Dependencies
         run: |
-         sudo apt-get update -y          
+         sudo apt-get update -y      
+         sudo apt-get install use libfuse2t64 -y 
          
       - name: Checkout
         uses: actions/checkout@v4
