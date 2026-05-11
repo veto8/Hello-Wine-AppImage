@@ -1,0 +1,61 @@
+[Version]
+Signature="$Windows NT$"
+Class=%ExceptionClassDesc%
+ClassGuid={F5776D81-AE53-4935-8E84-B0B283D8BCEF}
+Provider=%Msft%
+CatalogFile=wdsetup.cat
+ComponentId={E9A84D17-E5C1-4890-A557-4460207F6AAF}
+DriverVer=4-25-2005, 2.81.1117.6
+FriendlyName=WebData Setup Exception Package
+VersionMajor=2
+VersionMinor=81
+BuildNumber=1117
+QFENumber=6
+
+[SourceDisksNames]
+55=%ID1%,"wdsetup.cab",0
+
+[SourceDisksFiles]
+wdsetup.inf=55,,
+odbcconf.exe=55,,
+odbcconf.dll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=WDSETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CheckAdminRights=1
+Copyfiles=INFDIR,SYSTEMDIR
+RegisterOCXs=RegFiles
+
+Realversion=2.81.1117.6
+
+
+
+
+[DestinationDirs]
+INFDIR=16427,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+DllCache=11,"DllCache"
+
+[INFDIR]
+wdsetup.inf,,,96
+
+
+[SYSTEMDIR]
+odbcconf.exe,,,96
+odbcconf.dll,,,96
+
+[DllCache]
+odbcconf.dll,,,96
+odbcconf.exe,,,96
+
+
+[RegFiles]
+"%11%\odbcconf.dll"
+
+[Strings]
+ID1="MDAC Installer"
+ExceptionClassDesc="Exception Package"
+Msft="Microsoft"

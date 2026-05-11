@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Hello
+Exec=Exec=usr/bin/hello_c_nappgui.exe
+Icon=ct
+Categories=Utility;

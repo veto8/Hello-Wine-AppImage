@@ -1,0 +1,59 @@
+[version]
+signature="$CHICAGO$"
+AdvancedInf=2.5
+
+[SourceDisksNames]
+55=%ID1%,"SQLXMLXP.CAB",0
+
+[SourceDisksFiles]
+sqlxmlx.inf=55,,
+sqlxmlx.dll=55,,
+sqlxmlx.rll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=SQLXMLX_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,OLEDB,RESDIR
+RegisterOCXs=RegFiles
+CustomDestination=MyCustomDestination
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI
+ComponentName=SQLXMLX_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,OLEDB,RESDIR
+RegisterOCXs=RegFiles
+CustomDestination=MyCustomDestination.NT
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyCustomDestination.NT]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+[Strings]
+ID1="Microsoft SQL Server XML Drivers"
+
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+OLEDB=49000,"System\OLE DB"
+RESDIR=49000,"System\OLE DB"
+
+[INFDIR]
+sqlxmlx.inf,,,96
+
+[OLEDB]
+sqlxmlx.dll,,,96
+
+[RESDIR]
+sqlxmlx.rll,,,96
+
+[RegFiles]
+"%49000%\System\OLE DB\sqlxmlx.dll"

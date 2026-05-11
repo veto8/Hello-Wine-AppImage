@@ -1,0 +1,66 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+
+[SourceDisksNames]
+55=%ID1%,"dasetup.cab",0
+
+[SourceDisksFiles]
+dasetupd.inf=55,,
+dasetup.exe=55,,
+dasetupr.dll=55,,
+dasetup.ini=55,,
+advpack.dll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=DASETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,SHARED
+CustomDestination=MyCustomDestination
+AddReg=Reg.DataAccess
+
+
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=DASETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,SHARED
+CustomDestination=MyCustomDestination.NT
+
+
+[Reg.DataAccess]
+HKLM,"SOFTWARE\Microsoft\DataAccess","LocVer",FLG_ADDREG_TYPE_SZ,1033
+
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyCustomDestination.NT]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+
+[Strings]
+ID1="MDAC Setup Files"
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+SHARED=49000,"Microsoft Shared\dasetup"
+
+[INFDIR]
+dasetupd.inf,,,96
+
+[SHARED]
+dasetup.exe,,,96
+dasetupr.dll,,,96
+dasetup.ini,,,96
+advpack.dll,,,96

@@ -1,0 +1,53 @@
+[version]
+signature="$CHICAGO$"
+AdvancedInf=2.0, %BadInst%
+
+[SourceDisksNames]
+55="default","mtxfiles.CAB",0
+
+[SourceDisksFiles]
+mtxfiles.inf=55,,
+mtxoci.dll=55,,
+mtxdm.dll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI,%BadSetupVer%
+ComponentName=MTX_FILES_MDAC
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CustomDestination=MyCustomDestination
+Copyfiles=INFDIR,SYSDIR
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI,%BadSetupVer%
+ComponentName=MTX_FILES_MDAC
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CheckAdminRights=1
+CustomDestination=MyCustomDestination.NT
+Copyfiles=INFDIR,SYSDIR
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyCustomDestination.NT]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+[Strings]
+ID1="MTX system files"
+BadInst="You have an older version of the Installer"
+BadSetupVer="Your system is missing the required Setup engine."
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+SYSDIR=11
+
+[INFDIR]
+mtxfiles.inf,,,96
+
+[SYSDIR]
+mtxoci.dll,,,96
+mtxdm.dll,,,96

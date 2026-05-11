@@ -1,0 +1,70 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+
+[SourceDisksNames]
+55=%ID1%,"wdsetup.cab",0
+
+[SourceDisksFiles]
+wdsetup.inf=55,,
+wdset_dl.inf=55,,
+odbcconf.exe=55,,
+odbcconf.dll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+CatalogName=wdsetupm.cat
+ComponentName=WDSETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CustomDestination=MyCustomDestination
+Copyfiles=INFDIR,SYSTEMDIR
+RegisterOCXs=RegFiles
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=WDSETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CheckAdminRights=1
+CustomDestination=MyNTCustomDestination
+Copyfiles=INFDIR,XINFDIR,SYSTEMDIR
+RegisterOCXs=RegFiles
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyNTCustomDestination]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+XINFDIR=49000,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+DllCache=11,"DllCache"
+
+[INFDIR]
+wdset_dl.inf,,,96
+
+[XINFDIR]
+wdsetup.inf,,,96
+
+[SYSTEMDIR]
+odbcconf.exe,,,96
+odbcconf.dll,,,96
+
+[DllCache]
+odbcconf.dll,,,96
+odbcconf.exe,,,96
+
+
+[RegFiles]
+%11%\odbcconf.dll
+
+[Strings]
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"

@@ -1,0 +1,56 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+Signature="$Windows NT$"
+Class=%ExceptionClassDesc%
+ClassGuid={F5776D81-AE53-4935-8E84-B0B283D8BCEF}
+Provider=%Msft%
+CatalogFile=rspfiles.cat
+ComponentId={12F1D3F6-5371-4962-8B9E-41AC0668F2C1}
+DriverVer=4-25-2005, 2.81.1117.6
+FriendlyName=Microsoft MDAC Response Files
+VersionMajor=2
+VersionMinor=81
+BuildNumber=1117
+QFENumber=6
+
+
+[SourceDisksNames]
+55=%ID1%,"rspfiles.cab",0
+
+[SourceDisksFiles]
+rspfiles.inf=55,,
+redist.rsp=55,,
+mdaccore.rsp=55,,
+sqlclnt.rsp=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=SETUP_RSP_FILES28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,SYSTEMDIR
+
+Realversion=2.81.1117.6
+
+
+
+
+[Strings]
+ID1="Microsoft Setup Response Files"
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"
+ExceptionClassDesc="Exception Package" 
+
+[DestinationDirs]
+INFDIR=16427,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+
+[INFDIR]
+rspfiles.inf,,,96
+
+[SYSTEMDIR]
+redist.rsp,,,96
+mdaccore.rsp,,,96
+sqlclnt.rsp,,,96

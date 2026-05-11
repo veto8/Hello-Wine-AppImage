@@ -1,0 +1,88 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+
+[SourceDisksNames]
+55=%ID1%,"sqlnet.cab",0
+
+[SourceDisksFiles]
+sqlnet.inf=55,,
+sqlnetdl.inf=55,,
+cliconf.chm=55,,
+cliconfg.dll=55,,
+cliconfg.exe=55,,
+cliconfg.rll=55,,
+dbmsrpcn.dll=55,,
+dbnmpntw.dll=55,,
+dbnetlib.dll=55,,
+dbmsgnet.dll=55,,
+instcat.sql=55,,
+sqlunirl.dll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+CatalogName=sqlnetm.cat
+ComponentName=SQLNET_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+AddReg=VIA.Reg
+CustomDestination=MyCustomDestination
+Copyfiles=INFDIR,SYSTEMDIR
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=SQLNET_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+AddReg=VIA.Reg
+CheckAdminRights=1
+CustomDestination=MyNTCustomDestination
+Copyfiles=INFDIR,XINFDIR,SYSTEMDIR,NTSYSTEM
+RegisterOCXs=RegFiles
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyNTCustomDestination]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+XINFDIR=49000,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+
+[VIA.Reg]
+HKLM,%VIAKey%,"Vendor",2,
+HKLM,%VIAKey%,"DefaultServerPort",2,"0:1433"
+HKLM,%VIAKey%,"DefaultClientNIC",2,"0"
+HKLM,%VIAKey%,"RecognizedVendors",2,"Giganet, ServerNet II"
+
+[INFDIR]
+sqlnetdl.inf,,,96
+
+[XINFDIR]
+sqlnet.inf,,,96
+
+[SYSTEMDIR]
+cliconfg.exe,,,96
+cliconfg.dll,,,96
+cliconfg.rll,,,96
+cliconf.chm,,,96
+dbmsrpcn.dll,,,96
+dbnmpntw.dll,,,96
+dbnetlib.dll,,,96
+instcat.sql,,,96
+dbmsgnet.dll,,,96
+sqlunirl.dll,,,96
+
+
+[Strings]
+ID1="Microsoft SQL Server Net Libs"
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"
+VIAKey="SOFTWARE\Microsoft\MSSQLServer\Client\SuperSocketNetLib\VIA"
+

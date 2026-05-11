@@ -1,0 +1,56 @@
+[Version]
+Signature="$Windows NT$"
+Class=%ExceptionClassDesc%
+ClassGuid={F5776D81-AE53-4935-8E84-B0B283D8BCEF}
+Provider=%Msft%
+CatalogFile=sqlodbc.cat
+ComponentId={A2F3B5A7-2D39-4a4e-96E6-BFADEBCBB27B}
+DriverVer=4-25-2005, 2.81.1117.6
+FriendlyName=Microsoft SQL Server ODBC Drivers
+VersionMajor=2
+VersionMinor=81
+BuildNumber=1117
+QFENumber=6
+
+[SourceDisksNames]
+55=%ID1%,"sqlodbc.cab",0
+
+[SourceDisksFiles]
+sqlodbc.inf=55,,
+odbcbcp.dll=55,,
+sqlsodbc.chm=55,,
+sqlsrv32.dll=55,,
+sqlsrv32.rll=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=SQLODBC_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CheckAdminRights=1
+Copyfiles=INFDIR,SYSTEMDIR
+RegisterOCXs=RegFiles
+
+Realversion=2.81.1117.6
+
+
+
+
+[DestinationDirs]
+INFDIR=16427,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+
+[INFDIR]
+sqlodbc.inf,,,96
+
+
+[SYSTEMDIR]
+odbcbcp.dll,,,96
+sqlsodbc.chm,,,96
+sqlsrv32.dll,,,96
+sqlsrv32.rll,,,96
+
+[Strings]
+ID1="MDAC Installer"
+ExceptionClassDesc = "Exception Package"
+Msft = "Microsoft"
