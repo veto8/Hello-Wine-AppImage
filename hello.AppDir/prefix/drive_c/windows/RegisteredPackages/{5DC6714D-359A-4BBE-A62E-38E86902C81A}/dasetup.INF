@@ -1,0 +1,64 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+Signature="$Windows NT$"
+Class=%ExceptionClassDesc%
+ClassGuid={F5776D81-AE53-4935-8E84-B0B283D8BCEF}
+Provider=%Msft%
+CatalogFile=dasetup.cat
+ComponentId={5DC6714D-359A-4bbe-A62E-38E86902C81A}
+DriverVer=4-25-2005, 2.81.1117.6
+FriendlyName=Microsoft MDAC Setup Files
+VersionMajor=2
+VersionMinor=81
+BuildNumber=1117
+QFENumber=6
+
+[SourceDisksNames]
+55=%ID1%,"dasetup.cab",0
+
+[SourceDisksFiles]
+dasetup.inf=55,,
+dasetup.exe=55,,
+dasetupr.dll=55,,
+dasetup.ini=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=DASETUP28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+Copyfiles=INFDIR,SHARED
+AddReg=Reg.DataAccess
+
+
+
+Realversion=2.81.1117.6
+
+
+[Reg.DataAccess]
+HKLM,"SOFTWARE\Microsoft\DataAccess","LocVer",FLG_ADDREG_TYPE_SZ,1033
+
+
+
+
+
+
+[Strings]
+ID1="MDAC Setup Files"
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"
+ExceptionClassDesc="Exception Package" 
+
+[DestinationDirs]
+INFDIR=16427,"Microsoft Shared\dasetup"
+SHARED=16427,"Microsoft Shared\dasetup"
+
+[INFDIR]
+dasetup.inf,,,96
+
+[SHARED]
+dasetup.exe,,,96
+dasetupr.dll,,,96
+dasetup.ini,,,96

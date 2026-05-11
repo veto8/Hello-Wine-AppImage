@@ -1,0 +1,7 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Transaction Server\Local Computer\My Computer]
+"OracleXaLib"="xa80.dll"
+"OracleSqlLib"="sqllib80.dll"
+"OracleOciLib"="oci.dll"
+

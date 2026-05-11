@@ -1,0 +1,63 @@
+[Version]
+Signature="$Windows NT$"
+Class=%ExceptionClassDesc%
+ClassGuid={F5776D81-AE53-4935-8E84-B0B283D8BCEF}
+Provider=%Msft%
+CatalogFile=sqloldb.cat
+ComponentId={BA63DE4B-CAD8-49c5-A3F2-E976BEB019C8}
+DriverVer=4-25-2005, 2.81.1117.6
+FriendlyName=Microsoft SQL Server OLEDB Provider
+VersionMajor=2
+VersionMinor=81
+BuildNumber=1117
+QFENumber=6
+
+[SourceDisksNames]
+55=%ID1%,"SQLOLDB.CAB",0
+
+[SourceDisksFiles]
+sqloldb.inf=55,,
+sqloledb.dll=55,,
+msdart.dll=55,,
+sqloledb.rll=55,,
+sqlsoldb.chm=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI
+ComponentName=SQLOLEDB_MDAC28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CheckAdminRights=1
+Copyfiles=INFDIR,DEP.FILES,OLEDB
+RegisterOCXs=RegFiles
+
+Realversion=2.81.1117.6
+
+
+
+
+[DestinationDirs]
+INFDIR=16427,"Microsoft Shared\dasetup"
+OLEDB=16427,"System\OLE DB"
+DEP.FILES=11
+
+[INFDIR]
+sqloldb.inf,,,96
+
+
+[DEP.FILES]
+msdart.dll,,,96
+
+[OLEDB]
+sqloledb.dll,,,96
+sqloledb.rll,,,96
+sqlsoldb.chm,,,96
+
+[RegFiles]
+"%16427%\System\OLE DB\sqloledb.dll"
+
+[Strings]
+ID1="Microsoft SQL Server OLEDB Provider"
+ExceptionClassDesc="Exception Package"
+Msft="Microsoft"
+

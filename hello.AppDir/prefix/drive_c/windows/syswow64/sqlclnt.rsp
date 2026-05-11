@@ -1,0 +1,3 @@
+INSTALLDRIVER "SQL Server|Driver=SQLSRV32.dll||"
+CONFIGDRIVER "SQL Server" "CPTimeout=60"
+CONFIGDSN "SQL Server" "DSN=MQIS|Server=(Local)|Description=SQL Server|Database=MQIS||"

@@ -1,0 +1,10 @@
+#!/bin/bash
+SELF=$(readlink -f "$0")
+HERE=${SELF%/*}
+export WINEPREFIX="${WINEPREFIX:-$HOME/.wine-tamuz}"
+export WINEDEBUG="${WINEDEBUG:--all}"
+if [ ! -f "$WINEPREFIX/system.reg" ]; then
+  cp -a "$HERE/prefix" "$WINEPREFIX"
+fi
+cd "$HERE"
+exec "$HERE/usr/bin/wine-stable_11.0-x86_64.AppImage" "$HERE/usr/bin/hello_c_nappgui.exe" "$@"

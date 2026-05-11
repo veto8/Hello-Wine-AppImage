@@ -1,0 +1,7 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\MSDTC\MTxOCI]
+"OracleXaLib"="oraclient8.dll"
+"OracleSqlLib"="orasql8.dll"
+"OracleOciLib"="oci.dll"
+

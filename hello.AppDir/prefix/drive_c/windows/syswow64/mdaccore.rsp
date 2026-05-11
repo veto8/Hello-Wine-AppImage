@@ -1,0 +1,5 @@
+INSTALLDRVRMGR
+INSTALLTRANSLATOR "MS Code Page Translator|Translator=MSCPXL32.dll||"
+INSTALLDRIVER "Microsoft ODBC for Oracle|Driver=msorcl32.dll|Setup=msorcl32.dll||"
+CONFIGDRIVER "Microsoft ODBC for Oracle" "CPTimeout=60"
+REGTYPELIB "simpdata.tlb"

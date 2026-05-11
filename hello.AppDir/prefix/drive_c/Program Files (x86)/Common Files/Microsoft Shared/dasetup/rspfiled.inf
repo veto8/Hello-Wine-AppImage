@@ -1,0 +1,56 @@
+[Version]
+Signature="$CHICAGO$"
+AdvancedINF=2.5, %BadInst%
+
+
+[SourceDisksNames]
+55=%ID1%,"rspfiles.cab",0
+
+[SourceDisksFiles]
+rspfiled.inf=55,,
+redist.rsp=55,,
+mdaccore.rsp=55,,
+sqlclnt.rsp=55,,
+
+[DefaultInstall]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=SETUP_RSP_FILES28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CustomDestination=MyCustomDestination
+Copyfiles=INFDIR,SYSTEMDIR
+
+[DefaultInstall.NT]
+RequiredEngine=SETUPAPI, %BadSetupVer%
+ComponentName=SETUP_RSP_FILES28
+Realversion=2.81.1117.6
+ComponentVersion=3.81.1117.6
+CustomDestination=MyNTCustomDestination
+Copyfiles=INFDIR,SYSTEMDIR
+
+[MyCustomDestination]
+49000=DestRoot,5
+
+[MyNTCustomDestination]
+49000=DestRoot,17
+
+[DestRoot]
+HKLM,"SOFTWARE\Microsoft\Windows\CurrentVersion","CommonFilesDir",,
+
+[Strings]
+ID1="Microsoft Setup Response Files"
+BadInst="You have an older version of the Installer."
+BadSetupVer="Your system is missing the required Setup engine."
+Msft="Microsoft"
+
+[DestinationDirs]
+INFDIR=49000,"Microsoft Shared\dasetup"
+SYSTEMDIR=11
+
+[INFDIR]
+rspfiled.inf,,,96
+
+[SYSTEMDIR]
+redist.rsp,,,96
+mdaccore.rsp,,,96
+sqlclnt.rsp,,,96
